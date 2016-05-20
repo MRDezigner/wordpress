@@ -1,5 +1,4 @@
-# wordpress
-Template blank WordPress
+# Template blank WordPress
 
 <h1>Hierarquia de arquivos do WordPress</h1>
 <p>Para criar um bom theme para WordPress, você precisa conhecer bem a estrutura de arquivos que são utilizados no construir estes themes. São usados vários arquivos que setorizam as várias funcionalidades do blog ou site. Veja abaixo arquivos que são normalmente utilizados:</p>

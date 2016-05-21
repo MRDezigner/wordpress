@@ -21,7 +21,7 @@ get_header(); ?>
 	<div class="col-md-8">
 
 		<?php query_posts('showposts=6');?>
-    	<?php if (have_posts()): while (have_posts()) : the_post(); ?>
+    		<?php if (have_posts()): while (have_posts()) : the_post(); ?>
 		<div class="col-md-12">
 			<?php the_post_thumbnail('medium_large', array( 'class'	=> "img-responsive")); ?>
 			<h4 class="post_title entry-title">
@@ -46,8 +46,7 @@ get_header(); ?>
 			</div>
 		</div>
 		<?php endwhile; else:?>
-    <?php endif;?>
-		
+    		<?php endif;?>
 	</div>
 
 	<div class="col-md-4">

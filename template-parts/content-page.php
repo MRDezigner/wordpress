@@ -3,8 +3,8 @@
  * The template used for displaying page content
  *
  * @package WordPress
- * @subpackage Jacinta_Cavalcante
- * @since Jacinta Cavalcante 1.0
+ * @subpackage WordPress
+ * @since WordPress 1.0
  */
 ?>
 
@@ -13,18 +13,18 @@
 		<?php the_title( '<h1 class="entry-title">', '</h1>' ); ?>
 	</header><!-- .entry-header -->
 
-	<?php jacintacavalcante_post_thumbnail(); ?>
+	<?php wordpress_post_thumbnail(); ?>
 
 	<div class="entry-content">
 		<?php
 		the_content();
 
 		wp_link_pages( array(
-			'before'      => '<div class="page-links"><span class="page-links-title">' . __( 'Pages:', 'jacintacavalcante' ) . '</span>',
+			'before'      => '<div class="page-links"><span class="page-links-title">' . __( 'Páginas:', 'wordpress' ) . '</span>',
 			'after'       => '</div>',
 			'link_before' => '<span>',
 			'link_after'  => '</span>',
-			'pagelink'    => '<span class="screen-reader-text">' . __( 'Page', 'jacintacavalcante' ) . ' </span>%',
+			'pagelink'    => '<span class="screen-reader-text">' . __( 'Página', 'wordpress' ) . ' </span>%',
 			'separator'   => '<span class="screen-reader-text">, </span>',
 		) );
 		?>
@@ -33,8 +33,8 @@
 	<?php
 		edit_post_link(
 			sprintf(
-				/* translators: %s: Name of current post */
-				__( 'Edit<span class="screen-reader-text"> "%s"</span>', 'jacintacavalcante' ),
+				/* tradução: %s: Nome do post atual */
+				__( 'Edit<span class="screen-reader-text"> "%s"</span>', 'wordpress' ),
 				get_the_title()
 			),
 			'<footer class="entry-footer"><span class="edit-link">',

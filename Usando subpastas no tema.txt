@@ -1,0 +1,17 @@
+/**
+* Usando subpastas no tema
+* Para utilizar esta função com subpastas em seu diretório tema, simplesmente adicione o nome da pasta antes do slug. 
+* Por exemplo, se vc tem uma pasta chamada "template-parts" no dretório de seu tema e um arquivo chamado 
+* “content-page.php” naquela sub-pasta, vc deverá usar o get_template_part() desse jeito:
+*/
+
+<?php get_template_part( 'template-parts/content', 'page' ); ?>
+
+/**
+* Navegação
+* Adicionando a barra de navegação do tema um arquivo genêrico do template, nos demos o nome de "nav.php":
+*/
+
+<?php get_template_part( 'nav' );           // Barra de navegação (nav.php) ?>
+<?php get_template_part( 'nav', '2' );      // Barra de navegação #2 (nav-2.php) ?>
+<?php get_template_part( 'nav', 'single' ); // Barra de navegação para usar nos posts (single pages) (nav-single.php) ?>

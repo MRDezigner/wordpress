@@ -239,9 +239,36 @@ function jacintacavalcante_widgets_init() {
 }
 add_action( 'widgets_init', 'wordpress_widgets_init' );
 
+
 /**
- * Add Disqus ao seu site
- */
+* Dispara antes do arquivo de parte do tempate especificado será carregado.
+*
+* A porção dinâmica do nome do gancho, '$slug', refere-se ao nome do slug para 
+* a parte do modelo genérico.
+*
+* @since 3.0.0
+*
+* @param string $slug O nome do slug para o modelo do template genérico.
+* @param string $name O nome do template especializado.
+*/
+function get_template_part( $slug, $name = null ) {
+    do_action( "get_template_part_{$slug}", $slug, $name );
+ 
+    $templates = array();
+    $name = (string) $name;
+    if ( '' !== $name )
+        $templates[] = "{$slug}-{$name}.php";
+ 
+    $templates[] = "{$slug}.php";
+ 
+    locate_template($templates, true, false);
+}
+
+
+/**
+ * Add Disqus ao seu site.
+*/
+
 function disqus_embed($disqus_shortname) {
     global $post;
     wp_enqueue_script('disqus_embed','http://'.$disqus_shortname.'.disqus.com/embed.js');

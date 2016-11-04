@@ -11,27 +11,14 @@ get_header(); ?>
 
 <div class="col-md-12">
 												
-	<?php if ( have_posts() ) : ?>
-		<?php
-		// Inicio do loop.
-		while ( have_posts() ) : the_post();
-
-			/**
-			 * Executar o laço para a pesquisa para saída dos resultados.
-			 * Se você quer sobrecarregar isso em um tema filho, em seguida, incluir um arquivo
-			 * chamado de content-search.php e que será usado no lugar.
-			 */
-			get_template_part( 'template-parts/content', 'search' );
-
-		// Fim do loop.
-		endwhile;
-
-	// If no content, include the "No posts found" template.
-	else :
-		get_template_part( 'template-parts/content', 'none' );
-
-	endif;
-	?>
+<form class="search-form" role="search" method="get" action="<?php echo home_url( '/' ); ?>">
+    <div class="input-group">
+        <input type="search" class="form-control" placeholder="<?php echo esc_attr_x( 'Procurar …', 'placeholder' ) ?>" value="<?php echo get_search_query() ?>" name="s" id="s">
+        <span class="input-group-addon">
+            <button type="submit" value="<?php echo esc_attr_x( '', 'submit button' ) ?>"><i class="icon icon-Search"></i></button>
+        </span>
+    </div>
+</form>
 
 </div>
 
